@@ -10,6 +10,9 @@ class Registration extends Component{
             password1: '',
             password2: ''
         }
+        this.change = this.change.bind(this);
+        this.click = this.click.bind(this);
+        this.reset = this.reset.bind(this);
     }
 
     change(e){
@@ -20,9 +23,7 @@ class Registration extends Component{
     }
 
     click() {
-        if (this.state.password.length < 6) {
-            alert("Password should contain more than 6 characters.");
-        }
+        
     }
 
     reset() {
@@ -45,7 +46,8 @@ class Registration extends Component{
                     className="label">First Name:</label>
                     <input name="firstName" 
                     type="text" 
-                    value= {this.state.firstName} 
+                    value= {this.state.firstName}
+                    onChange={this.change} 
                     placeholder="First Name"
                     className="input"></input>
                     
@@ -53,7 +55,8 @@ class Registration extends Component{
                     className="label">Last Name:</label>
                     <input name="lastName" 
                     type="text" 
-                    value= {this.state.lastName} 
+                    value= {this.state.lastName}
+                    onChange={this.change} 
                     placeholder="Last Name"
                     className="input"></input>
                     
